@@ -1,10 +1,6 @@
 const express = require('express');
 const app = express();
-const db = require('../../models');
-const port = process.env.PORT || 3000;
-
-const helpers = require('../../_helpers');
-const Message = db.Message;
+const port = process.env.PORT || 4000;
 
 let messageControllers = {
   message: (req, res) => {
@@ -14,8 +10,11 @@ let messageControllers = {
     require('../../socket/socketio')(io);
 
     http.listen(port, () => console.log(`Server Started. at http://localhost:${port}`));
+    app.get('/', (req, res) => {
+      res.sendFile(process.cwd() + '/routes/index.html');
+    });
 
-    res.sendFile(__dirname + '/index.html');
+    return res.json({ status: 'success', message: 'chat start !!' });
   },
 };
 

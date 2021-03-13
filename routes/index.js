@@ -5,5 +5,5 @@ module.exports = (app) => {
   app.use('/api', apis);
   // app.get('/users/chat', (req, res) => {
   //   res.sendFile(__dirname + '/index.html');
-  // })
+  // });
 };

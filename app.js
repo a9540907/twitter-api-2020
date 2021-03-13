@@ -40,6 +40,6 @@ app.use((req, res, next) => {
 require('./routes')(app);
 // require('./socket/socketio')(io);
 
-// http.listen(port, () => console.log(`Server Started. at http://localhost:${port}`));
+app.listen(port, () => console.log(`Server Started. at http://localhost:${port}`));
 
 module.exports = app;

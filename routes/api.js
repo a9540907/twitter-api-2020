@@ -40,7 +40,7 @@ const authenticatedAdmin = (req, res, next) => {
   }
 };
 //message
-router.get('/message/:talkUserId', authenticated, messageControllers.message);
+router.get('/message', authenticated, messageControllers.message);
 
 //followship
 router.post('/followships', authenticated, followshipController.postFollowship);
